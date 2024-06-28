@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Button() {
-    const handleSubmit=()=>{
-        alert('Button clicked');
+    const [count,setCount]=useState(0);
+    const handleUp=()=>{
+        setCount(count+1)
+        alert(count);
+    }
+    const handleDown=()=>{
+        setCount(count-1)
+        alert(count);
+        alert(count);
     }
     return (
     <div>
-      <button onClick={handleSubmit}>Submmit</button>
+      <button onClick={handleUp}>Increase</button>
+      <h1>{count}</h1>
+      <button onClick={handleDown}>Decrease</button>
     </div>
   )}
 export default Button;
